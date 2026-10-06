@@ -1,9 +1,9 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Horario } from './dominio/entidades';
-import type { HorarioRepository } from './dominio/horario.repository';
-import { CrearHorarioDto } from './dto/crear-horario.dto';
-import { ActualizarHorarioDto } from './dto/actualizar-horario.dto';
-import { HORARIO_REPOSITORY } from './horarios.tokens';
+import { Inject, Injectable } from "@nestjs/common";
+import { Horario } from "./dominio/entidades";
+import type { HorarioRepository } from "./dominio/horario.repository";
+import { CrearHorarioDto } from "./dto/crear-horario.dto";
+import { ActualizarHorarioDto } from "./dto/actualizar-horario.dto";
+import { HORARIO_REPOSITORY } from "./horarios.tokens";
 
 @Injectable()
 export class HorariosService {

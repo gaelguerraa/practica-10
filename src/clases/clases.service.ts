@@ -1,9 +1,9 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Clase } from './dominio/entidades';
-import type { ClaseRepository } from './dominio/clase.repository';
-import { CrearClaseDto } from './dto/crear-clase.dto';
-import { ActualizarClaseDto } from './dto/actualizar-clase.dto';
-import { CLASE_REPOSITORY } from './clases.tokens';
+import { Inject, Injectable } from "@nestjs/common";
+import { Clase } from "./dominio/entidades";
+import type { ClaseRepository } from "./dominio/clase.repository";
+import { CrearClaseDto } from "./dto/crear-clase.dto";
+import { ActualizarClaseDto } from "./dto/actualizar-clase.dto";
+import { CLASE_REPOSITORY } from "./clases.tokens";
 
 @Injectable()
 export class ClasesService {

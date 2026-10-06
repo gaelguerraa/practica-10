@@ -21,7 +21,7 @@ export interface Miembro {
   activo: boolean;
 }
 
-export type EstadoInscripcion = 'confirmada' | 'cancelada';
+export type EstadoInscripcion = "confirmada" | "cancelada";
 
 export interface Inscripcion {
   id: number;
@@ -31,4 +31,4 @@ export interface Inscripcion {
   creadaEn: Date;
 }
 
-export type NuevaInscripcion = Omit<Inscripcion, 'id' | 'estado' | 'creadaEn'>;
+export type NuevaInscripcion = Omit<Inscripcion, "id" | "estado" | "creadaEn">;

@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Delete,
+  ForbiddenException,
   Get,
   HttpCode,
   NotFoundException,
@@ -13,6 +14,8 @@ import type { Response } from "express";
 import { InscripcionesService } from "./inscripciones.service";
 import { CrearInscripcionDto } from "./dto/crear-inscripcion.dto";
 import { aInscripcionDto } from "./dto/inscripcion-respuesta.dto";
+import { UsuarioActual } from "../decoradores/usuario-actual.decorator";
+import { Rol, type PayloadJwt } from "../miembros/dominio/usuario";
 
 @Controller("inscripciones")
 export class InscripcionesController {
@@ -37,8 +40,12 @@ export class InscripcionesController {
   @HttpCode(201)
   async crear(
     @Body() dto: CrearInscripcionDto,
+    @UsuarioActual() usuario: PayloadJwt,
     @Res({ passthrough: true }) res: Response,
   ) {
+    if (usuario.rol === Rol.miembro && usuario.miembroId !== dto.miembroId) {
+      throw new ForbiddenException("Solo puedes inscribirte a ti mismo");
+    }
     const inscripcion = await this.servicio.crear(dto);
     res.setHeader("Location", `/inscripciones/${inscripcion.id}`);
     return aInscripcionDto(inscripcion);

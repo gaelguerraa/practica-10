@@ -1,6 +1,6 @@
-import { Miembro } from './entidades';
-import { CrearMiembroDto } from '../dto/crear-miembro.dto';
-import { ActualizarMiembroDto } from '../dto/actualizar-miembro.dto';
+import { Miembro } from "./entidades";
+import { CrearMiembroDto } from "../dto/crear-miembro.dto";
+import { ActualizarMiembroDto } from "../dto/actualizar-miembro.dto";
 
 // La interfaz que el Service conoce. No sabe si detras hay un arreglo
 // en memoria o MySQL: ese es el punto de la Practica 8 (Prisma).

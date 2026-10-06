@@ -1,9 +1,9 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Miembro } from './dominio/entidades';
-import type { MiembroRepository } from './dominio/miembro.repository';
-import { CrearMiembroDto } from './dto/crear-miembro.dto';
-import { ActualizarMiembroDto } from './dto/actualizar-miembro.dto';
-import { MIEMBRO_REPOSITORY } from './miembros.tokens';
+import { Inject, Injectable } from "@nestjs/common";
+import { Miembro } from "./dominio/entidades";
+import type { MiembroRepository } from "./dominio/miembro.repository";
+import { CrearMiembroDto } from "./dto/crear-miembro.dto";
+import { ActualizarMiembroDto } from "./dto/actualizar-miembro.dto";
+import { MIEMBRO_REPOSITORY } from "./miembros.tokens";
 
 @Injectable()
 export class MiembrosService {

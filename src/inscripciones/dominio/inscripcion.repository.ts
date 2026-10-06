@@ -1,4 +1,4 @@
-import { Horario, Inscripcion, Miembro, NuevaInscripcion } from './entidades';
+import { Horario, Inscripcion, Miembro, NuevaInscripcion } from "./entidades";
 
 // La interfaz que el Service conoce. No sabe si detras hay un arreglo
 // en memoria o MySQL: ese es el punto de la Practica 8 (Prisma).

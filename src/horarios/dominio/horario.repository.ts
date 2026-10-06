@@ -1,6 +1,6 @@
-import { Horario } from './entidades';
-import { CrearHorarioDto } from '../dto/crear-horario.dto';
-import { ActualizarHorarioDto } from '../dto/actualizar-horario.dto';
+import { Horario } from "./entidades";
+import { CrearHorarioDto } from "../dto/crear-horario.dto";
+import { ActualizarHorarioDto } from "../dto/actualizar-horario.dto";
 
 // La interfaz que el Service conoce. No sabe si detras hay un arreglo
 // en memoria o MySQL -- eso llega en la Practica 8 (Prisma).

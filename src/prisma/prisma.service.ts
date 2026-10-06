@@ -5,7 +5,11 @@ import { PrismaClient } from "../../generated/prisma/client";
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleDestroy {
   constructor() {
-    const databaseUrl = new URL(process.env.DATABASE_URL);
+    const databaseUrlValue = process.env.DATABASE_URL;
+    if (!databaseUrlValue) {
+      throw new Error("DATABASE_URL no esta configurada");
+    }
+    const databaseUrl = new URL(databaseUrlValue);
     const adapter = new PrismaMariaDb({
       host: databaseUrl.hostname,
       port: Number(databaseUrl.port || 3306),
@@ -13,6 +17,7 @@ export class PrismaService extends PrismaClient implements OnModuleDestroy {
       password: decodeURIComponent(databaseUrl.password),
       database: databaseUrl.pathname.slice(1),
       connectionLimit: 5,
+      allowPublicKeyRetrieval: true,
     });
     super({ adapter });
   }
